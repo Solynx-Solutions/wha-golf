@@ -1,3 +1,5 @@
+"use client";
+
 import { CTA_URL } from "../lib/constants";
 
 const sponsorTiers = [
@@ -83,54 +85,32 @@ export default function Sponsorship() {
   return (
     <section
       id="sponsorship"
-      className="relative py-24 px-6 sm:px-10 lg:px-16"
-      style={{ background: "linear-gradient(180deg, #0f0f0e 0%, #0d0d0d 100%)" }}
+      className="section-shell px-5 sm:px-8 lg:px-14"
       aria-labelledby="sponsorship-heading"
     >
-      {/* Top accent */}
-      <div className="divider-gold max-w-7xl mx-auto mb-16" />
-
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-6">
-          <span
-            className="inline-block mb-4 text-xs font-semibold tracking-[0.2em] uppercase px-3 py-1 rounded-full"
-            style={{ color: "#52b788", background: "rgba(45,106,79,0.15)", border: "1px solid rgba(45,106,79,0.3)" }}
-          >
-            Sponsorship
-          </span>
-          <h2
-            id="sponsorship-heading"
-            className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
-            style={{ color: "#f0ede8", maxWidth: "760px", margin: "0 auto 1rem" }}
-          >
-            Put Your Brand in Front of California&apos;s Top Hardscape Professionals
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9fcdb7]">Sponsorship</p>
+          <h2 id="sponsorship-heading" className="font-display mt-3 text-3xl leading-tight text-[#f0ece5] sm:text-5xl">
+            Sponsor the Event That Commands Industry Attention
           </h2>
-          <p
-            className="text-base leading-relaxed mb-8"
-            style={{ color: "#9a9490", maxWidth: "580px", margin: "0 auto" }}
-          >
-            WHA sponsors gain direct visibility with contractors, suppliers, manufacturers, and industry
-            decision-makers throughout Northern California.
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-[#b8b1a4] sm:text-base">
+            From hole exposure to premier category positioning, WHA sponsors are seen by decision-makers all day.
           </p>
-          <div className="divider-gold w-24 mx-auto" />
         </div>
 
-        {/* Top 3 featured tiers */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-14 mb-5">
+        <div className="mb-5 mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
           {sponsorTiers.slice(0, 3).map((tier) => (
             <SponsorCard key={tier.id} tier={tier} />
           ))}
         </div>
 
-        {/* Bottom 2 smaller tiers */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto mb-12">
+        <div className="mx-auto mb-12 grid max-w-2xl grid-cols-1 gap-5 sm:grid-cols-2">
           {sponsorTiers.slice(3).map((tier) => (
             <SponsorCard key={tier.id} tier={tier} compact />
           ))}
         </div>
 
-        {/* CTA */}
         <div className="text-center">
           <a
             href={CTA_URL}
@@ -145,13 +125,11 @@ export default function Sponsorship() {
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </a>
-          <p className="text-xs mt-4" style={{ color: "#5c5853" }}>
-            Contact us to discuss custom sponsorship packages
+          <p className="mt-4 text-xs text-[#8c8679]">
+            Prestige placements are limited and assigned first-come, first-served.
           </p>
         </div>
       </div>
-
-      <div className="divider-gold max-w-7xl mx-auto mt-16" />
     </section>
   );
 }
@@ -160,49 +138,32 @@ function SponsorCard({ tier, compact = false }: { tier: typeof sponsorTiers[0]; 
   return (
     <div
       id={`sponsor-${tier.id}`}
-      className="relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
-      style={{
-        background: tier.bgAccent,
-        border: `1px solid ${tier.borderColor}`,
-        boxShadow: tier.featured
-          ? `0 8px 40px rgba(201,168,76,0.12), 0 4px 16px rgba(0,0,0,0.4)`
-          : "0 4px 16px rgba(0,0,0,0.25)",
-      }}
+      className={`relative overflow-hidden rounded-2xl border p-6 transition-transform duration-300 hover:-translate-y-1 ${
+        tier.featured
+          ? "border-[#c3a461] bg-gradient-to-b from-[#282318] to-[#161512]"
+          : "border-[#313634] bg-gradient-to-b from-[#1c201f] to-[#111413]"
+      } ${compact ? "p-5" : "p-6"}`}
     >
       {tier.featured && (
-        <div
-          className="absolute top-0 left-0 right-0 py-1.5 text-center text-xs font-bold tracking-[0.12em] uppercase"
-          style={{ background: "linear-gradient(90deg, #c9a84c, #e5c96e, #c9a84c)", color: "#0d0d0d" }}
-        >
+        <div className="absolute left-0 right-0 top-0 bg-gradient-to-r from-[#b6914d] via-[#e4cc95] to-[#b6914d] py-1.5 text-center text-[11px] font-bold uppercase tracking-[0.15em] text-[#0f1110]">
           Premier
         </div>
       )}
 
-      <div className={`p-6 ${tier.featured ? "pt-9" : ""} ${compact ? "p-5" : ""}`}>
-        {/* Name + Price */}
-        <div className="flex items-start justify-between gap-3 mb-4">
-          <h3
-            className={`font-display font-bold leading-tight ${compact ? "text-base" : "text-xl"}`}
-            style={{ color: "#f0ede8" }}
-          >
+      <div className={`${tier.featured ? "pt-7" : ""}`}>
+        <div className="mb-4 flex items-start justify-between gap-3">
+          <h3 className={`font-display leading-tight text-[#ece8de] ${compact ? "text-xl" : "text-2xl"}`}>
             {tier.name}
           </h3>
-          <span
-            className={`font-bold flex-shrink-0 ${compact ? "text-base" : "text-xl"}`}
-            style={{ color: tier.accentColor }}
-          >
+          <span className={`flex-shrink-0 font-bold ${compact ? "text-base" : "text-2xl"}`} style={{ color: tier.accentColor }}>
             {tier.price}
           </span>
         </div>
 
-        {/* Perks */}
         <ul className="space-y-2">
           {tier.perks.map((perk) => (
-            <li key={perk} className="flex items-start gap-2 text-xs" style={{ color: "#9a9490" }}>
-              <span
-                className="flex-shrink-0 mt-0.5 w-3.5 h-3.5 rounded-full flex items-center justify-center"
-                style={{ background: `${tier.accentColor}18`, border: `1px solid ${tier.accentColor}40` }}
-              >
+            <li key={perk} className="flex items-start gap-2 text-xs text-[#b7afa2] sm:text-sm">
+              <span className="mt-0.5 flex h-3.5 w-3.5 flex-shrink-0 items-center justify-center rounded-full" style={{ background: `${tier.accentColor}18`, border: `1px solid ${tier.accentColor}40` }}>
                 <svg width="6" height="6" viewBox="0 0 8 8" fill="none" stroke={tier.accentColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="1 4 3 6 7 2" />
                 </svg>

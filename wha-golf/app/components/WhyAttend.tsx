@@ -1,114 +1,54 @@
-export default function WhyAttend() {
-  const cards = [
-    {
-      icon: <NetworkIcon />,
-      accent: "#c9a84c",
-      tag: "Connect",
-      headline: "Network With Industry Leaders",
-      body: "Build face-to-face relationships with Northern California's leading contractors, suppliers, and manufacturers — the people who shape the hardscape industry.",
-    },
-    {
-      icon: <TrophyIcon />,
-      accent: "#52b788",
-      tag: "Compete",
-      headline: "Championship Golf & Prizes",
-      body: "Enjoy a world-class round at Eagle Vines Golf Club with contests, prizes, raffles, and giveaways throughout the day.",
-    },
-    {
-      icon: <GrowthIcon />,
-      accent: "#c9a84c",
-      tag: "Grow",
-      headline: "Build Future Opportunities",
-      body: "The relationships forged at WHA's annual tournament have driven partnerships, referrals, and growth across the California market for 20 years.",
-    },
-  ];
+"use client";
 
+const cards = [
+  {
+    icon: <NetworkIcon />,
+    tag: "Authority",
+    headline: "Meet Owners and Buyers",
+    body: "Get direct face-time with contractors, suppliers, and manufacturers making purchasing decisions now.",
+  },
+  {
+    icon: <TrophyIcon />,
+    tag: "Experience",
+    headline: "Premium Golf. Real Industry Access.",
+    body: "Compete at Eagle Vines while conversations move from introductions to projects and partnerships.",
+  },
+  {
+    icon: <GrowthIcon />,
+    tag: "Growth",
+    headline: "Strengthen Your 2026 Pipeline",
+    body: "Use one day to generate visibility, referrals, and sponsor-level market credibility across Northern California.",
+  },
+];
+
+export default function WhyAttend() {
   return (
-    <section
-      id="why-attend"
-      className="relative section-glow-green py-24 px-6 sm:px-10 lg:px-16"
-      style={{ background: "#0d0d0d" }}
-      aria-labelledby="why-attend-heading"
-    >
-      {/* Section Header */}
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <span
-            className="inline-block mb-4 text-xs font-semibold tracking-[0.2em] uppercase px-3 py-1 rounded-full"
-            style={{ color: "#52b788", background: "rgba(45,106,79,0.15)", border: "1px solid rgba(45,106,79,0.3)" }}
-          >
-            Why Attend
-          </span>
-          <h2
-            id="why-attend-heading"
-            className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
-            style={{ color: "#f0ede8" }}
-          >
-            More Than a Round of Golf
+    <section id="why-attend" className="section-shell section-glow-green px-5 sm:px-8 lg:px-14" aria-labelledby="why-attend-heading">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#a2d3bc]">Why Attend</p>
+          <h2 id="why-attend-heading" className="font-display mt-3 text-3xl leading-tight text-[#f0ede7] sm:text-5xl">
+            Built for Contractors,
+            <span className="text-gold-gradient"> Sponsors, and Suppliers</span>
           </h2>
-          <div className="divider-gold w-24 mx-auto" />
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-[#b5ada0] sm:text-base">
+            This is a revenue and relationship event for the hardscape industry. Every section of the day is designed for outcomes.
+          </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {cards.map((card) => (
             <article
               key={card.tag}
-              className="glass-card p-8 group transition-all duration-300 hover:-translate-y-1"
-              style={{
-                boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 40px rgba(${card.accent === "#c9a84c" ? "201,168,76" : "82,183,136"},0.15), 0 4px 24px rgba(0,0,0,0.4)`;
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(0,0,0,0.4)";
-              }}
+              className="glass-card group p-6 transition-transform duration-300 hover:-translate-y-1"
             >
-              {/* Icon */}
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                style={{
-                  background: card.accent === "#c9a84c"
-                    ? "rgba(201,168,76,0.12)"
-                    : "rgba(82,183,136,0.12)",
-                  border: `1px solid ${card.accent}30`,
-                  color: card.accent,
-                }}
-              >
+              <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[#3d6e58] bg-[#153428]/45 text-[#d9c58d]">
                 {card.icon}
               </div>
-
-              {/* Tag */}
-              <span
-                className="text-xs font-bold tracking-[0.15em] uppercase mb-3 block"
-                style={{ color: card.accent }}
-              >
-                {card.tag}
-              </span>
-
-              {/* Headline */}
-              <h3
-                className="font-display text-xl font-bold mb-3 leading-tight"
-                style={{ color: "#f0ede8" }}
-              >
-                {card.headline}
-              </h3>
-
-              {/* Body */}
-              <p className="text-sm leading-relaxed" style={{ color: "#9a9490" }}>
-                {card.body}
-              </p>
-
-              {/* Bottom accent line */}
-              <div
-                className="mt-6 h-px w-0 group-hover:w-full transition-all duration-500"
-                style={{
-                  background: card.accent === "#c9a84c"
-                    ? "linear-gradient(90deg, #c9a84c, transparent)"
-                    : "linear-gradient(90deg, #52b788, transparent)",
-                }}
-              />
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#dfc98f]">{card.tag}</p>
+              <h3 className="font-display mt-2 text-2xl leading-[1.1] text-[#ece8de]">{card.headline}</h3>
+              <p className="mt-3 text-sm text-[#b7b0a3]">{card.body}</p>
+              <div className="mt-5 h-px w-full bg-gradient-to-r from-[#c3a461] to-transparent opacity-30 transition-opacity duration-300 group-hover:opacity-70" />
             </article>
           ))}
         </div>

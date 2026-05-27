@@ -1,3 +1,5 @@
+"use client";
+
 const schedule = [
   { time: "9:00 AM", label: "Registration Opens", icon: <CheckInIcon /> },
   { time: "10:00 AM", label: "Box Lunch Service", icon: <LunchIcon /> },
@@ -16,123 +18,60 @@ const includes = [
 
 export default function EventDetails() {
   return (
-    <section
-      id="event-details"
-      className="py-24 px-6 sm:px-10 lg:px-16 relative"
-      style={{ background: "linear-gradient(180deg, #0d0d0d 0%, #111110 100%)" }}
-      aria-labelledby="event-details-heading"
-    >
-      {/* Subtle top border */}
-      <div className="divider-gold max-w-7xl mx-auto mb-16" />
-
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <span
-            className="inline-block mb-4 text-xs font-semibold tracking-[0.2em] uppercase px-3 py-1 rounded-full"
-            style={{ color: "#c9a84c", background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.25)" }}
-          >
-            Event Details
-          </span>
-          <h2
-            id="event-details-heading"
-            className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
-            style={{ color: "#f0ede8" }}
-          >
-            A Full Day at Eagle Vines
+    <section id="event-details" className="section-shell px-5 sm:px-8 lg:px-14" aria-labelledby="event-details-heading">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#dfc98f]">Event Details</p>
+          <h2 id="event-details-heading" className="font-display mt-3 text-3xl leading-tight text-[#f0ece5] sm:text-5xl">
+            Structured for a Full Day of Business + Golf
           </h2>
-          <p className="text-base" style={{ color: "#9a9490", maxWidth: "500px", margin: "0 auto" }}>
-            Friday, June 19, 2026 &mdash; Eagle Vines Golf Club, Napa Valley, CA
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-[#b4ada1] sm:text-base">
+            Friday, June 19, 2026 at Eagle Vines Golf Club in Napa Valley.
           </p>
-          <div className="divider-gold w-24 mx-auto mt-6" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-
-          {/* Schedule Timeline */}
-          <div>
-            <h3 className="text-xs font-bold tracking-[0.18em] uppercase mb-8" style={{ color: "#c9a84c" }}>
-              Day Schedule
-            </h3>
-            <div className="relative">
-              {/* Timeline line */}
-              <div
-                className="absolute left-[2.125rem] top-4 bottom-4 w-px hidden sm:block"
-                style={{ background: "linear-gradient(180deg, #c9a84c30, #2d6a4f30, #c9a84c30)" }}
-              />
-
-              <div className="flex flex-col gap-6">
-                {schedule.map((item, i) => (
-                  <div key={i} className="flex items-start gap-5 group">
-                    {/* Icon */}
-                    <div
-                      className="flex-shrink-0 w-[4.25rem] h-[4.25rem] rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-105"
-                      style={{
-                        background: "rgba(26,26,26,0.9)",
-                        border: "1px solid rgba(201,168,76,0.2)",
-                        color: "#c9a84c",
-                        boxShadow: "0 4px 16px rgba(0,0,0,0.3)",
-                      }}
-                    >
-                      {item.icon}
-                    </div>
-                    {/* Content */}
-                    <div className="pt-3">
-                      <span className="block text-xs font-bold tracking-widest uppercase mb-1" style={{ color: "#c9a84c" }}>
-                        {item.time}
-                      </span>
-                      <span className="text-lg font-semibold" style={{ color: "#f0ede8" }}>
-                        {item.label}
-                      </span>
-                    </div>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <article className="glass-card p-6 sm:p-8">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#dfc98f]">Day Schedule</h3>
+            <div className="mt-5 space-y-4">
+              {schedule.map((item) => (
+                <div key={item.time} className="flex items-center gap-4 rounded-lg border border-[#313634] bg-[#111413]/70 p-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#3f6f58] bg-[#153427]/55 text-[#dac48b]">
+                    {item.icon}
                   </div>
-                ))}
-              </div>
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#a3cdb8]">{item.time}</p>
+                    <p className="text-sm text-[#e6e0d6] sm:text-base">{item.label}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
+          </article>
 
-          {/* What's Included */}
-          <div className="glass-card p-8 lg:p-10">
-            <h3 className="text-xs font-bold tracking-[0.18em] uppercase mb-8" style={{ color: "#52b788" }}>
-              What&apos;s Included
-            </h3>
-            <ul className="space-y-4">
+          <article className="glass-card p-6 sm:p-8">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#dfc98f]">Included with Registration</h3>
+            <ul className="mt-5 space-y-3">
               {includes.map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <span
-                    className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
-                    style={{ background: "rgba(45,106,79,0.25)", border: "1px solid rgba(82,183,136,0.4)" }}
-                  >
-                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#52b788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <li key={item} className="flex items-center gap-3 text-sm text-[#d8d1c3]">
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-[#4f8269] bg-[#193729]">
+                    <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="#b8dfc9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="1.5 6 4.5 9 10.5 3" />
                     </svg>
                   </span>
-                  <span className="text-base font-medium" style={{ color: "#d0cdc8" }}>
-                    {item}
-                  </span>
+                  {item}
                 </li>
               ))}
             </ul>
 
-            {/* Venue callout */}
-            <div
-              className="mt-8 p-5 rounded-xl"
-              style={{
-                background: "rgba(45,106,79,0.1)",
-                border: "1px solid rgba(45,106,79,0.25)",
-              }}
-            >
-              <p className="text-sm font-semibold mb-1" style={{ color: "#52b788" }}>Eagle Vines Golf Club</p>
-              <p className="text-sm" style={{ color: "#9a9490" }}>
+            <div className="mt-6 rounded-xl border border-[#3b7158] bg-[#173226]/60 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9fd0b7]">Venue Address</p>
+              <p className="mt-2 text-sm text-[#d2cabd]">
                 2600 Jameson Canyon Rd, American Canyon, CA 94503
-                <br />Napa Valley&apos;s premier championship golf course
               </p>
             </div>
-          </div>
+          </article>
         </div>
       </div>
-
-      <div className="divider-gold max-w-7xl mx-auto mt-16" />
     </section>
   );
 }

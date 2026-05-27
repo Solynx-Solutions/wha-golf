@@ -1,3 +1,5 @@
+"use client";
+
 import { CTA_URL } from "../lib/constants";
 
 const pricingTiers = [
@@ -40,113 +42,71 @@ export default function Pricing() {
   return (
     <section
       id="registration"
-      className="relative py-24 px-6 sm:px-10 lg:px-16 section-glow-green"
-      style={{ background: "#0d0d0d" }}
+      className="section-shell section-glow-green px-5 sm:px-8 lg:px-14"
       aria-labelledby="pricing-heading"
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <span
-            className="inline-block mb-4 text-xs font-semibold tracking-[0.2em] uppercase px-3 py-1 rounded-full"
-            style={{ color: "#c9a84c", background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.25)" }}
-          >
-            Registration
-          </span>
-          <h2
-            id="pricing-heading"
-            className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
-            style={{ color: "#f0ede8" }}
-          >
-            Secure Your Spot
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#dfc98f]">Registration</p>
+          <h2 id="pricing-heading" className="font-display mt-3 text-3xl leading-tight text-[#f0ece5] sm:text-5xl">
+            Register Your Team Before Pricing Increases
           </h2>
-          <p className="text-base" style={{ color: "#9a9490", maxWidth: "460px", margin: "0 auto" }}>
-            Early pricing available through May 31. Register before June 1 to save.
+          <p className="mx-auto mt-4 max-w-xl text-sm text-[#b7afa2] sm:text-base">
+            Early rates end May 31. Keep your crew visible at WHA&apos;s most important annual event.
           </p>
-          <div className="divider-gold w-24 mx-auto mt-6" />
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-5 md:grid-cols-2">
           {pricingTiers.map((tier) => (
             <div
               key={tier.id}
               id={`pricing-${tier.id}`}
-              className="relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
-              style={{
-                background: tier.featured ? "rgba(26,26,26,0.95)" : "rgba(20,20,20,0.8)",
-                border: tier.featured
-                  ? "1px solid rgba(201,168,76,0.4)"
-                  : "1px solid rgba(42,42,42,0.8)",
-                boxShadow: tier.featured
-                  ? "0 8px 40px rgba(201,168,76,0.12), 0 4px 16px rgba(0,0,0,0.4)"
-                  : "0 4px 16px rgba(0,0,0,0.3)",
-              }}
+              className={`relative overflow-hidden rounded-2xl border p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-7 ${
+                tier.featured
+                  ? "border-[#c3a461] bg-gradient-to-b from-[#24211b] to-[#141514]"
+                  : "border-[#2f3331] bg-gradient-to-b from-[#1b1e1d] to-[#111312]"
+              }`}
             >
-              {/* Featured badge */}
               {tier.featured && (
-                <div
-                  className="absolute top-0 left-0 right-0 py-2 text-center text-xs font-bold tracking-[0.15em] uppercase"
-                  style={{ background: "linear-gradient(90deg, #c9a84c, #e5c96e, #c9a84c)", color: "#0d0d0d" }}
-                >
+                <div className="absolute left-0 right-0 top-0 bg-gradient-to-r from-[#b6914d] via-[#e4cc95] to-[#b6914d] py-1.5 text-center text-[11px] font-bold uppercase tracking-[0.17em] text-[#101110]">
                   Best Value
                 </div>
               )}
 
               <div className={`p-7 ${tier.featured ? "pt-10" : ""}`}>
-                {/* Tier label */}
-                <h3 className="font-display text-xl font-bold mb-5" style={{ color: "#f0ede8" }}>
+                <h3 className="font-display text-2xl text-[#ece7dd]">
                   {tier.label}
                 </h3>
 
-                {/* Prices side by side */}
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  {/* Early price */}
-                  <div
-                    className="rounded-xl p-4 text-center"
-                    style={{
-                      background: "rgba(201,168,76,0.08)",
-                      border: "1px solid rgba(201,168,76,0.25)",
-                    }}
-                  >
-                    <p className="text-xs font-semibold tracking-wider uppercase mb-1" style={{ color: "#c9a84c" }}>
+                <div className="mt-5 grid grid-cols-2 gap-3">
+                  <div className="rounded-lg border border-[#6f5c33] bg-[#2a241a]/75 p-4 text-center">
+                    <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#dfc98f]">
                       Early
                     </p>
-                    <p className="text-2xl font-bold" style={{ color: "#e5c96e" }}>
+                    <p className="text-2xl font-bold text-[#f1ddb0]">
                       {tier.earlyPrice}
                     </p>
-                    <p className="text-xs mt-1" style={{ color: "#9a9490" }}>
+                    <p className="mt-1 text-[11px] text-[#b8ad95]">
                       {tier.earlyDeadline}
                     </p>
                   </div>
-                  {/* Regular price */}
-                  <div
-                    className="rounded-xl p-4 text-center"
-                    style={{
-                      background: "rgba(26,26,26,0.6)",
-                      border: "1px solid rgba(42,42,42,0.8)",
-                    }}
-                  >
-                    <p className="text-xs font-semibold tracking-wider uppercase mb-1" style={{ color: "#5c5853" }}>
+                  <div className="rounded-lg border border-[#2f3331] bg-[#111312]/70 p-4 text-center">
+                    <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8d8678]">
                       Standard
                     </p>
-                    <p className="text-2xl font-bold" style={{ color: "#9a9490" }}>
+                    <p className="text-2xl font-bold text-[#b4aea1]">
                       {tier.regularPrice}
                     </p>
-                    <p className="text-xs mt-1" style={{ color: "#5c5853" }}>
+                    <p className="mt-1 text-[11px] text-[#7f786b]">
                       {tier.regularDeadline}
                     </p>
                   </div>
                 </div>
 
-                {/* Perks list */}
-                <ul className="space-y-2 mb-7">
+                <ul className="mt-5 space-y-2">
                   {tier.perks.map((perk) => (
-                    <li key={perk} className="flex items-center gap-2.5 text-sm" style={{ color: "#b0ada8" }}>
-                      <span
-                        className="flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
-                        style={{ background: "rgba(45,106,79,0.2)", border: "1px solid rgba(82,183,136,0.35)" }}
-                      >
+                    <li key={perk} className="flex items-center gap-2.5 text-sm text-[#c7c0b3]">
+                      <span className="inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full border border-[#4a7f66] bg-[#1a3b2c]">
                         <svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="#52b788" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="1 5 3.5 7.5 9 2" />
                         </svg>
@@ -156,14 +116,12 @@ export default function Pricing() {
                   ))}
                 </ul>
 
-                {/* CTA */}
                 <a
                   href={CTA_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   id={`register-${tier.id}-btn`}
-                  className={tier.featured ? "btn-primary w-full" : "btn-secondary w-full"}
-                  style={!tier.featured ? { justifyContent: "center" } : {}}
+                  className={`${tier.featured ? "btn-primary" : "btn-secondary"} mt-6 w-full justify-center`}
                 >
                   Register Now
                 </a>
@@ -172,10 +130,9 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* Early deadline callout */}
-        <p className="text-center text-sm mt-8" style={{ color: "#5c5853" }}>
+        <p className="mt-7 text-center text-xs text-[#8f897c] sm:text-sm">
           Early registration pricing valid through{" "}
-          <span style={{ color: "#c9a84c", fontWeight: 600 }}>May 31, 2026</span>.
+          <span className="font-semibold text-[#dfc98f]">May 31, 2026</span>.
           All registrations subject to availability.
         </p>
       </div>

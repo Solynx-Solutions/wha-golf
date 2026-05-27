@@ -1,27 +1,20 @@
 export default function Footer() {
   return (
     <footer
-      className="py-10 px-6 sm:px-10 lg:px-16 text-center"
-      style={{ background: "#080808", borderTop: "1px solid rgba(42,42,42,0.6)" }}
+      className="border-t border-[#2d322f] bg-[#0b0d0c] px-5 py-10 text-center sm:px-8 lg:px-14"
       role="contentinfo"
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Logo wordmark */}
-        <div className="mb-4">
-          <span className="font-display text-base font-semibold tracking-wider" style={{ color: "#5c5853" }}>
-            Western Hardscape Association
-          </span>
-        </div>
+      <div className="mx-auto max-w-7xl">
+        <p className="font-display text-lg text-[#d4c4a1]">Western Hardscape Association</p>
+        <div className="divider-gold mx-auto mb-4 mt-3 w-28" />
 
-        {/* Divider */}
-        <div className="divider-gold w-24 mx-auto mb-4" style={{ opacity: 0.2 }} />
-
-        {/* Event line */}
-        <p className="text-xs tracking-widest uppercase mb-2" style={{ color: "#3a3835" }}>
+        <p className="mb-2 text-[11px] uppercase tracking-[0.18em] text-[#8f897d] sm:text-xs">
           20th Annual Golf Tournament &bull; June 19, 2026 &bull; Eagle Vines Golf Club &bull; Napa Valley, CA
         </p>
 
-        <p className="text-xs" style={{ color: "#2a2a28" }}>
+        <p className="text-xs text-[#746f63]">Strategic digital support by SOLYNX.</p>
+
+        <p className="mt-2 text-xs text-[#625d53]">
           &copy; {new Date().getFullYear()} Western Hardscape Association. All rights reserved.
         </p>
       </div>
