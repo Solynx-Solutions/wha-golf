@@ -31,8 +31,8 @@ export default function Hero() {
             transition={{ duration: 0.55 }}
             className="mb-4 inline-flex items-center gap-3 rounded-full border border-[#3b775d] bg-[#163326]/75 px-3 py-2"
           >
-            <span className="inline-flex shrink-0 items-center justify-center rounded-md border border-[#4f846b] bg-[#121614] p-1 shadow-[0_0_0_1px_rgba(18,22,20,0.5)]">
-              <img src="/wha.png" alt="WHA logo" width={112} height={49} className="block h-auto w-[112px] rounded-sm" />
+            <span className="inline-flex shrink-0 items-center justify-center rounded-md border border-[#4f846b] bg-[#121614] px-2 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-[#b3e0c8] shadow-[0_0_0_1px_rgba(18,22,20,0.5)]">
+              WHA
             </span>
             <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#b3e0c8]">Western Hardscape Association</span>
           </motion.div>
