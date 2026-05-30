@@ -56,6 +56,25 @@ export default function Pricing() {
           </p>
         </div>
 
+        {/* Scarcity notice */}
+        <div
+          id="registration-scarcity"
+          className="mx-auto mb-8 flex max-w-2xl items-start gap-3 rounded-xl border border-[#6b4a2a] bg-[linear-gradient(135deg,rgba(42,28,16,0.75),rgba(24,16,10,0.85))] px-5 py-4"
+          role="alert"
+          aria-live="polite"
+        >
+          <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-[#c3a461]/50 bg-[#c3a461]/10 text-[#e6cf95]">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+          </span>
+          <div>
+            <p className="text-sm font-bold text-[#e6cf95]">Registration Capacity Is Limited</p>
+            <p className="mt-0.5 text-xs text-[#b4a98c]">Once foursomes are filled, registration closes.</p>
+          </div>
+        </div>
+
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-5 md:grid-cols-2">
           {pricingTiers.map((tier) => (
             <div

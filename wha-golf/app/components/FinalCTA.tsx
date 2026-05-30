@@ -19,11 +19,11 @@ export default function FinalCTA() {
         >
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#9fceb8]">Final Call</p>
           <h2 id="final-cta-heading" className="font-display mt-3 text-3xl leading-tight text-[#f0ece5] sm:text-5xl">
-            Register Now and Claim Your Position
-            <span className="text-gold-gradient"> in the Industry Conversation</span>
+            Don&apos;t Miss the Industry Event
+            <span className="text-gold-gradient"> Everyone Will Be Talking About</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-[#b6afa2] sm:text-base">
-            Friday, June 19, 2026 at Eagle Vines Golf Club in Napa Valley.
+            Secure your spot before registration closes and sponsorship inventory sells out.
           </p>
         </motion.div>
 
@@ -37,7 +37,7 @@ export default function FinalCTA() {
                 id="final-register-btn"
                 className="btn-primary w-full sm:w-auto"
               >
-                Register Now
+                Register to Play
                 <ArrowIcon />
               </a>
               <a

@@ -52,10 +52,8 @@ export default function Hero() {
             transition={{ duration: 0.62, delay: 0.12 }}
             className="font-display max-w-3xl text-4xl font-semibold leading-[1.02] text-[#f0ece4] sm:text-5xl lg:text-7xl"
           >
-            Where Hardscape Leaders
-            <span className="text-gold-gradient"> Build Deals</span>
-            <br />
-            Beyond the Jobsite
+            The Hardscape Industry&apos;s
+            <span className="text-gold-gradient"> Premier Golf Tournament</span>
           </motion.h1>
 
           <motion.p
@@ -85,7 +83,7 @@ export default function Hero() {
             className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
             <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">
-              Register Now
+              Register to Play
               <ArrowIcon />
             </a>
             <a href={CTA_URL} target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto">

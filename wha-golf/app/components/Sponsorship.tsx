@@ -94,8 +94,16 @@ export default function Sponsorship() {
           <h2 id="sponsorship-heading" className="font-display mt-3 text-3xl leading-tight text-[#f0ece5] sm:text-5xl">
             Sponsor the Event That Commands Industry Attention
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-[#b8b1a4] sm:text-base">
-            From hole exposure to premier category positioning, WHA sponsors are seen by decision-makers all day.
+
+          {/* Value statement */}
+          <div className="mx-auto mt-6 max-w-2xl rounded-xl border border-[#3b5c46] bg-[linear-gradient(140deg,rgba(21,42,30,0.65),rgba(12,16,13,0.75))] px-5 py-4">
+            <p className="text-sm font-semibold text-[#e6cf95] sm:text-base">
+              Sponsorship is not just exposure. It is direct access to the people specifying, buying, installing, and recommending hardscape products and services.
+            </p>
+          </div>
+
+          <p className="mx-auto mt-5 max-w-2xl text-sm text-[#b8b1a4] sm:text-base">
+            Get your brand in front of contractors, installers, designers, distributors, and purchasing decision-makers throughout Northern California.
           </p>
         </div>
 

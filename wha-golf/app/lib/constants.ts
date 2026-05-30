@@ -6,7 +6,7 @@ export const EVENT = {
   name: "20th Annual WHA Golf Tournament",
   headline: "Northern California's Premier Hardscape Networking Event",
   subheadline:
-    "Join contractors, suppliers, manufacturers, and outdoor living professionals for a full day of golf, sponsorship visibility, prizes, and industry connection in Napa Valley.",
+    "Join contractors, manufacturers, suppliers, and industry leaders for a day of golf, networking, sponsorship exposure, and business growth in Napa Valley.",
   date: "Friday, June 19, 2026",
   venue: "Eagle Vines Golf Club",
   location: "Napa Valley, California",
