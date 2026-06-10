@@ -20,10 +20,10 @@ const TIER_CONFIG = {
     cardBg:
       "linear-gradient(165deg,rgba(36,31,16,0.94),rgba(22,18,10,0.98))",
     hoverBorder: "#e5c96e",
-    logoSize: { width: 200, height: 60 },
-    logoClass: "h-14 w-auto max-w-[85%]",
-    gridClass: "grid-cols-2 sm:grid-cols-2 md:grid-cols-4",
-    cardMinH: "min-h-32",
+    logoSize: { width: 240, height: 240 },
+    logoClass: "h-20 w-auto max-w-[88%]",
+    gridClass: "grid-cols-1 sm:grid-cols-2 md:grid-cols-4",
+    cardMinH: "min-h-40",
   },
   gold: {
     label: "Gold Sponsors",
@@ -39,10 +39,10 @@ const TIER_CONFIG = {
     cardBg:
       "linear-gradient(165deg,rgba(30,26,14,0.93),rgba(18,15,8,0.97))",
     hoverBorder: "#c9a84c",
-    logoSize: { width: 180, height: 54 },
-    logoClass: "h-12 w-auto max-w-[80%]",
+    logoSize: { width: 220, height: 220 },
+    logoClass: "h-18 w-auto max-w-[85%]",
     gridClass: "grid-cols-1 sm:grid-cols-3",
-    cardMinH: "min-h-28",
+    cardMinH: "min-h-36",
   },
   silver: {
     label: "Silver Sponsors",
@@ -58,10 +58,10 @@ const TIER_CONFIG = {
     cardBg:
       "linear-gradient(165deg,rgba(24,25,24,0.92),rgba(15,16,15,0.97))",
     hoverBorder: "#b0aba6",
-    logoSize: { width: 160, height: 48 },
-    logoClass: "h-10 w-auto max-w-[80%]",
-    gridClass: "grid-cols-2 sm:grid-cols-3 md:grid-cols-6",
-    cardMinH: "min-h-24",
+    logoSize: { width: 200, height: 200 },
+    logoClass: "h-16 w-auto max-w-[85%]",
+    gridClass: "grid-cols-1 sm:grid-cols-2 md:grid-cols-3",
+    cardMinH: "min-h-32",
   },
   hole: {
     label: "Hole Sponsors",
@@ -77,10 +77,10 @@ const TIER_CONFIG = {
     cardBg:
       "linear-gradient(165deg,rgba(16,23,19,0.92),rgba(10,14,12,0.97))",
     hoverBorder: "#52b788",
-    logoSize: { width: 140, height: 42 },
-    logoClass: "h-8 w-auto max-w-[75%]",
-    gridClass: "grid-cols-2 sm:grid-cols-3 md:grid-cols-5",
-    cardMinH: "min-h-20",
+    logoSize: { width: 180, height: 180 },
+    logoClass: "h-14 w-auto max-w-[82%]",
+    gridClass: "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5",
+    cardMinH: "min-h-28",
   },
 } as const;
 
@@ -102,7 +102,7 @@ function SponsorCard({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Visit ${sponsor.name} website`}
-      className={`group relative flex ${tier.cardMinH} cursor-pointer items-center justify-center overflow-hidden rounded-xl px-3 py-5 text-center transition-all duration-300 hover:-translate-y-1`}
+      className={`group relative flex ${tier.cardMinH} cursor-pointer items-center justify-center overflow-hidden rounded-xl px-4 py-7 text-center transition-all duration-300 hover:-translate-y-1`}
       style={{
         border: `1px solid ${tier.cardBorder}`,
         background: tier.cardBg,
@@ -125,7 +125,7 @@ function SponsorCard({
         }}
       />
 
-      <div className="relative z-10 flex flex-col items-center justify-center gap-2">
+      <div className="relative z-10 flex flex-col items-center justify-center gap-3">
         {showPlaceholder ? (
           <>
             {/* Text placeholder — shown when logo asset is missing */}
@@ -136,22 +136,31 @@ function SponsorCard({
               Logo Pending
             </span>
             <span
-              className="text-sm font-semibold leading-tight tracking-[0.03em] transition-colors duration-300"
+              className="text-sm font-semibold leading-tight tracking-[0.03em]"
               style={{ color: "#d0c8b8" }}
             >
               {sponsor.name}
             </span>
           </>
         ) : (
-          <Image
-            src={sponsor.logo!}
-            alt={`${sponsor.name} logo`}
-            width={tier.logoSize.width}
-            height={tier.logoSize.height}
-            className={`${tier.logoClass} object-contain grayscale transition-all duration-300 group-hover:grayscale-0`}
-            onError={() => setImgError(true)}
-            unoptimized
-          />
+          <>
+            <Image
+              src={sponsor.logo!}
+              alt={`${sponsor.name} logo`}
+              width={tier.logoSize.width}
+              height={tier.logoSize.height}
+              className={`${tier.logoClass} object-contain grayscale transition-all duration-300 group-hover:grayscale-0`}
+              onError={() => setImgError(true)}
+              unoptimized
+            />
+            {/* Company name below logo */}
+            <span
+              className="mt-1 max-w-[90%] text-center text-[11px] font-semibold leading-tight tracking-[0.05em] opacity-60 transition-opacity duration-300 group-hover:opacity-100"
+              style={{ color: tier.accentColor }}
+            >
+              {sponsor.name}
+            </span>
+          </>
         )}
       </div>
     </a>

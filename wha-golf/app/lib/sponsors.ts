@@ -100,10 +100,16 @@ export const sponsors: Sponsor[] = [
     name: "Alliance Gator",
     website: "https://alliancegator.com/",
     tier: "silver",
-    logo: null, // logo not yet received — placeholder shown
+    logo: "/logo-pos-alliance-en.png",
   },
 
   // ── Hole ──────────────────────────────────────────────────────────────────
+  {
+    name: "SOLYNX",
+    website: "https://solynx.solutions/",
+    tier: "hole",
+    logo: "/solynx-logo-v2.png",
+  },
   {
     name: "Central Home Supply",
     website: "https://www.centralhomesupply.com/",
@@ -120,7 +126,7 @@ export const sponsors: Sponsor[] = [
     name: "Aardwolf USA",
     website: "https://aardwolfusa.com/",
     tier: "hole",
-    logo: null, // logo not yet received — placeholder shown
+    logo: "/Transparent_Aardwolf logo.png.png",
   },
   {
     name: "Bartell Global",

@@ -6,6 +6,7 @@ import EventDetails from "./components/EventDetails";
 import Pricing from "./components/Pricing";
 import Sponsorship from "./components/Sponsorship";
 import Partners from "./components/Partners";
+import SponsorCTA from "./components/SponsorCTA";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Pricing />
       <Sponsorship />
       <Partners />
+      <SponsorCTA />
       <FinalCTA />
       <Footer />
     </main>
