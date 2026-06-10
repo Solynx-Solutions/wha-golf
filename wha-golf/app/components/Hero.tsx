@@ -32,13 +32,13 @@ export default function Hero() {
             transition={{ duration: 0.50 }}
             className="mb-6"
           >
-            <div className="inline-block rounded-2xl bg-white/92 px-6 py-4 shadow-[0_4px_24px_rgba(0,0,0,0.35)]">
+            <div className="inline-block rounded-2xl bg-white/92 px-7 py-5 shadow-[0_4px_28px_rgba(0,0,0,0.40)]">
               <Image
                 src="/wha-logo.png"
                 alt="Western Hardscape Association official logo"
-                width={220}
-                height={110}
-                className="h-24 w-auto object-contain"
+                width={260}
+                height={130}
+                className="h-32 w-auto object-contain"
                 priority
                 unoptimized
               />

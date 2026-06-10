@@ -108,7 +108,7 @@ export const sponsors: Sponsor[] = [
     name: "SOLYNX",
     website: "https://solynx.solutions/",
     tier: "hole",
-    logo: "/solynx-logo-v2.png",
+    logo: "/SLX-WRD.png",
   },
   {
     name: "Central Home Supply",
