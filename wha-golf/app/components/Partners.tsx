@@ -7,94 +7,95 @@ import { type Sponsor, type SponsorTier, sponsors, TIER_ORDER } from "../lib/spo
 // ─── Tier Config ─────────────────────────────────────────────────────────────
 const TIER_CONFIG = {
   platinum: {
-    label: "Platinum Sponsors",
-    badgeLabel: "Platinum",
-    accentColor: "#e5c96e",
-    accentRgb: "229,201,110",
-    badgeBg: "linear-gradient(110deg,#b6914d,#e4cc95,#b6914d)",
-    badgeText: "#0f1110",
-    containerBorder: "rgba(229,201,110,0.35)",
-    containerBg:
-      "linear-gradient(165deg,rgba(32,27,14,0.96),rgba(20,17,9,0.99))",
-    cardBorder: "rgba(229,201,110,0.22)",
-    cardBg:
-      "linear-gradient(165deg,rgba(36,31,16,0.94),rgba(22,18,10,0.98))",
-    hoverBorder: "#e5c96e",
-    logoSize: { width: 240, height: 240 },
-    logoClass: "h-20 w-auto max-w-[88%]",
-    gridClass: "grid-cols-1 sm:grid-cols-2 md:grid-cols-4",
+    badgeLabel: "PLATINUM SPONSORS",
+    icon: "👑",
+    accentColor: "#c3a461",
+    accentRgb: "195,164,97",
+    containerBorder: "rgba(195,164,97,0.45)",
+    containerBg: "linear-gradient(165deg,rgba(28,23,11,0.97),rgba(18,14,6,0.99))",
+    headerDivider: "rgba(195,164,97,0.40)",
+    // ── White card for universal logo visibility ──
+    cardBg: "#f9f8f5",
+    cardBorder: "rgba(0,0,0,0.07)",
+    hoverBorder: "rgba(195,164,97,0.70)",
+    hoverShadow: "0 8px 24px rgba(195,164,97,0.18), 0 2px 6px rgba(0,0,0,0.08)",
+    logoSize: { width: 240, height: 160 },
+    logoClass: "h-20 w-auto max-w-[80%]",
+    nameColor: "#1e1b16",
+    gridClass: "grid-cols-2 md:grid-cols-4",
     cardMinH: "min-h-40",
+    gridGap: "gap-3 sm:gap-4",
   },
   gold: {
-    label: "Gold Sponsors",
-    badgeLabel: "Gold",
+    badgeLabel: "GOLD SPONSORS",
+    icon: "⭐",
     accentColor: "#c9a84c",
     accentRgb: "201,168,76",
-    badgeBg: "linear-gradient(110deg,#a07835,#d4aa5e,#a07835)",
-    badgeText: "#0f1110",
-    containerBorder: "rgba(201,168,76,0.28)",
-    containerBg:
-      "linear-gradient(165deg,rgba(28,24,14,0.95),rgba(18,15,8,0.99))",
-    cardBorder: "rgba(201,168,76,0.18)",
-    cardBg:
-      "linear-gradient(165deg,rgba(30,26,14,0.93),rgba(18,15,8,0.97))",
-    hoverBorder: "#c9a84c",
-    logoSize: { width: 220, height: 220 },
-    logoClass: "h-18 w-auto max-w-[85%]",
+    containerBorder: "rgba(201,168,76,0.38)",
+    containerBg: "linear-gradient(165deg,rgba(24,20,10,0.97),rgba(15,12,5,0.99))",
+    headerDivider: "rgba(201,168,76,0.38)",
+    cardBg: "#f9f8f5",
+    cardBorder: "rgba(0,0,0,0.07)",
+    hoverBorder: "rgba(201,168,76,0.65)",
+    hoverShadow: "0 8px 24px rgba(201,168,76,0.16), 0 2px 6px rgba(0,0,0,0.08)",
+    logoSize: { width: 220, height: 145 },
+    logoClass: "h-18 w-auto max-w-[80%]",
+    nameColor: "#1e1b16",
     gridClass: "grid-cols-1 sm:grid-cols-3",
-    cardMinH: "min-h-36",
+    cardMinH: "min-h-40",
+    gridGap: "gap-3 sm:gap-4",
   },
   silver: {
-    label: "Silver Sponsors",
-    badgeLabel: "Silver",
-    accentColor: "#9a9490",
-    accentRgb: "154,148,144",
-    badgeBg: "linear-gradient(110deg,#6e6a67,#b0aba6,#6e6a67)",
-    badgeText: "#0f1110",
-    containerBorder: "rgba(154,148,144,0.22)",
-    containerBg:
-      "linear-gradient(165deg,rgba(22,23,22,0.94),rgba(14,15,14,0.98))",
-    cardBorder: "rgba(154,148,144,0.15)",
-    cardBg:
-      "linear-gradient(165deg,rgba(24,25,24,0.92),rgba(15,16,15,0.97))",
-    hoverBorder: "#b0aba6",
-    logoSize: { width: 200, height: 200 },
-    logoClass: "h-16 w-auto max-w-[85%]",
-    gridClass: "grid-cols-1 sm:grid-cols-2 md:grid-cols-3",
-    cardMinH: "min-h-32",
+    badgeLabel: "SILVER SPONSORS",
+    icon: "🏆",
+    accentColor: "#a09b96",
+    accentRgb: "160,155,150",
+    containerBorder: "rgba(154,148,144,0.30)",
+    containerBg: "linear-gradient(165deg,rgba(20,21,20,0.97),rgba(12,13,12,0.99))",
+    headerDivider: "rgba(160,155,150,0.35)",
+    cardBg: "#f9f8f5",
+    cardBorder: "rgba(0,0,0,0.07)",
+    hoverBorder: "rgba(160,155,150,0.55)",
+    hoverShadow: "0 8px 20px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.07)",
+    logoSize: { width: 200, height: 130 },
+    logoClass: "h-16 w-auto max-w-[80%]",
+    nameColor: "#1e1b16",
+    gridClass: "grid-cols-2 sm:grid-cols-3",
+    cardMinH: "min-h-36",
+    gridGap: "gap-3",
   },
   hole: {
-    label: "Hole Sponsors",
-    badgeLabel: "Hole",
+    badgeLabel: "HOLE SPONSORS",
+    icon: "⛳",
     accentColor: "#52b788",
     accentRgb: "82,183,136",
-    badgeBg: "linear-gradient(110deg,#2d6a4f,#52b788,#2d6a4f)",
-    badgeText: "#0f1110",
-    containerBorder: "rgba(82,183,136,0.2)",
-    containerBg:
-      "linear-gradient(165deg,rgba(15,22,18,0.95),rgba(10,14,12,0.99))",
-    cardBorder: "rgba(82,183,136,0.14)",
-    cardBg:
-      "linear-gradient(165deg,rgba(16,23,19,0.92),rgba(10,14,12,0.97))",
-    hoverBorder: "#52b788",
-    logoSize: { width: 180, height: 180 },
-    logoClass: "h-14 w-auto max-w-[82%]",
-    gridClass: "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5",
+    containerBorder: "rgba(82,183,136,0.28)",
+    containerBg: "linear-gradient(165deg,rgba(12,18,14,0.97),rgba(8,11,9,0.99))",
+    headerDivider: "rgba(82,183,136,0.35)",
+    cardBg: "#f9f8f5",
+    cardBorder: "rgba(0,0,0,0.07)",
+    hoverBorder: "rgba(82,183,136,0.50)",
+    hoverShadow: "0 8px 20px rgba(82,183,136,0.14), 0 2px 6px rgba(0,0,0,0.07)",
+    logoSize: { width: 160, height: 100 },
+    logoClass: "h-12 w-auto max-w-[84%]",
+    nameColor: "#1e1b16",
+    gridClass: "grid-cols-2 sm:grid-cols-3 md:grid-cols-6",
     cardMinH: "min-h-28",
+    gridGap: "gap-2 sm:gap-3",
   },
 } as const;
 
-
-// ─── Logo Card ────────────────────────────────────────────────────────────────
+// ─── Sponsor Card ─────────────────────────────────────────────────────────────
 function SponsorCard({
   sponsor,
   tier,
 }: {
   sponsor: Sponsor;
-  tier: typeof TIER_CONFIG[SponsorTier];
+  tier: (typeof TIER_CONFIG)[SponsorTier];
 }) {
   const [imgError, setImgError] = useState(false);
-  const showPlaceholder = !sponsor.logo || imgError;
+  const [hovered, setHovered] = useState(false);
+  const hasLogo = !!sponsor.logo && !imgError;
 
   return (
     <a
@@ -102,67 +103,52 @@ function SponsorCard({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Visit ${sponsor.name} website`}
-      className={`group relative flex ${tier.cardMinH} cursor-pointer items-center justify-center overflow-hidden rounded-xl px-4 py-7 text-center transition-all duration-300 hover:-translate-y-1`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className={`flex ${tier.cardMinH} flex-col items-center justify-center rounded-xl px-3 py-5 text-center`}
       style={{
-        border: `1px solid ${tier.cardBorder}`,
         background: tier.cardBg,
-        boxShadow: `inset 0 1px 0 rgba(255,255,255,0.04), 0 8px 18px rgba(0,0,0,0.25)`,
+        border: `1px solid ${hovered ? tier.hoverBorder : tier.cardBorder}`,
+        boxShadow: hovered
+          ? tier.hoverShadow
+          : "0 2px 8px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04)",
+        transform: hovered ? "translateY(-2px)" : "translateY(0)",
+        transition: "border 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease",
+        cursor: "pointer",
       }}
     >
-      {/* Inner bevel */}
-      <div
-        className="pointer-events-none absolute inset-[1px] rounded-[10px] transition-colors duration-300"
-        style={{
-          border: `1px solid rgba(${tier.accentRgb},0.06)`,
-        }}
-      />
-      {/* Hover ambient glow */}
-      <div
-        className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(ellipse at center, rgba(${tier.accentRgb},0.10), transparent 70%)`,
-          boxShadow: `0 0 0 1px rgba(${tier.accentRgb},0.30), 0 14px 28px rgba(0,0,0,0.35), 0 0 18px rgba(${tier.accentRgb},0.15)`,
-        }}
-      />
-
-      <div className="relative z-10 flex flex-col items-center justify-center gap-3">
-        {showPlaceholder ? (
-          <>
-            {/* Text placeholder — shown when logo asset is missing */}
-            <span
-              className="text-[10px] font-semibold uppercase tracking-[0.18em] opacity-50"
-              style={{ color: tier.accentColor }}
-            >
-              Logo Pending
-            </span>
-            <span
-              className="text-sm font-semibold leading-tight tracking-[0.03em]"
-              style={{ color: "#d0c8b8" }}
-            >
-              {sponsor.name}
-            </span>
-          </>
+      {/* Logo area */}
+      <div className="flex flex-1 items-center justify-center">
+        {hasLogo ? (
+          <Image
+            src={sponsor.logo!}
+            alt={`${sponsor.name} logo`}
+            width={tier.logoSize.width}
+            height={tier.logoSize.height}
+            className={`${tier.logoClass} object-contain`}
+            onError={() => setImgError(true)}
+            unoptimized
+          />
         ) : (
-          <>
-            <Image
-              src={sponsor.logo!}
-              alt={`${sponsor.name} logo`}
-              width={tier.logoSize.width}
-              height={tier.logoSize.height}
-              className={`${tier.logoClass} object-contain grayscale transition-all duration-300 group-hover:grayscale-0`}
-              onError={() => setImgError(true)}
-              unoptimized
-            />
-            {/* Company name below logo */}
-            <span
-              className="mt-1 max-w-[90%] text-center text-[11px] font-semibold leading-tight tracking-[0.05em] opacity-60 transition-opacity duration-300 group-hover:opacity-100"
-              style={{ color: tier.accentColor }}
-            >
-              {sponsor.name}
-            </span>
-          </>
+          /* Name-only fallback when no logo available */
+          <span
+            className="px-2 text-sm font-bold leading-tight tracking-[0.02em]"
+            style={{ color: tier.nameColor }}
+          >
+            {sponsor.name}
+          </span>
         )}
       </div>
+
+      {/* Company name below logo */}
+      {hasLogo && (
+        <span
+          className="mt-2 max-w-[95%] text-center text-[11px] font-semibold leading-tight tracking-[0.04em]"
+          style={{ color: "#3d3933" }}
+        >
+          {sponsor.name}
+        </span>
+      )}
     </a>
   );
 }
@@ -170,7 +156,7 @@ function SponsorCard({
 // ─── Tier Section ─────────────────────────────────────────────────────────────
 function TierSection({ tierKey }: { tierKey: SponsorTier }) {
   const cfg = TIER_CONFIG[tierKey];
-  const tierSponsors = sponsors.filter((s) => s.tier === tierKey);
+  const tierSponsors = sponsors.filter((s) => s.tier === tierKey && s.logo);
   if (tierSponsors.length === 0) return null;
 
   return (
@@ -179,46 +165,33 @@ function TierSection({ tierKey }: { tierKey: SponsorTier }) {
       style={{
         border: `1px solid ${cfg.containerBorder}`,
         background: cfg.containerBg,
-        boxShadow: `inset 0 1px 0 rgba(255,255,255,0.03), 0 20px 48px rgba(0,0,0,0.35)`,
+        boxShadow:
+          "inset 0 1px 0 rgba(255,255,255,0.03), 0 20px 48px rgba(0,0,0,0.30)",
       }}
     >
-      {/* Tier header */}
-      <div className="relative px-5 pb-5 pt-6 sm:px-7 sm:pt-7">
-        {/* Tier badge */}
-        <div className="mb-4 flex items-center gap-3">
+      {/* ── Tier Header ───────────────────────────────────────────── */}
+      <div className="px-5 pb-4 pt-5 sm:px-7 sm:pt-6">
+        <div className="flex items-center gap-3">
+          {/* Icon + Label */}
+          <span className="text-lg leading-none">{cfg.icon}</span>
           <span
-            className="inline-flex items-center rounded-full px-3 py-0.5 text-[11px] font-bold uppercase tracking-[0.14em]"
-            style={{ background: cfg.badgeBg, color: cfg.badgeText }}
+            className="text-[13px] font-bold uppercase tracking-[0.16em]"
+            style={{ color: cfg.accentColor }}
           >
             {cfg.badgeLabel}
           </span>
-          {/* Subtle divider line after badge */}
+          {/* Trailing divider line */}
           <div
             className="h-px flex-1"
             style={{
-              background: `linear-gradient(90deg, rgba(${cfg.accentRgb},0.45), transparent)`,
+              background: `linear-gradient(90deg, ${cfg.headerDivider}, transparent)`,
             }}
           />
         </div>
-
-        <h3
-          className="font-display text-2xl leading-tight sm:text-3xl"
-          style={{ color: cfg.accentColor }}
-        >
-          {cfg.label}
-        </h3>
       </div>
 
-      {/* Divider */}
-      <div
-        className="mx-5 mb-5 h-px sm:mx-7"
-        style={{
-          background: `linear-gradient(90deg, rgba(${cfg.accentRgb},0.5), rgba(${cfg.accentRgb},0.1) 70%, transparent)`,
-        }}
-      />
-
-      {/* Logo grid */}
-      <div className={`grid gap-3 px-5 pb-7 sm:px-7 ${cfg.gridClass}`}>
+      {/* ── Logo Grid ─────────────────────────────────────────────── */}
+      <div className={`grid px-5 pb-6 sm:px-7 ${cfg.gridClass} ${cfg.gridGap}`}>
         {tierSponsors.map((sponsor) => (
           <SponsorCard key={sponsor.name} sponsor={sponsor} tier={cfg} />
         ))}
@@ -237,18 +210,24 @@ export default function Partners() {
     >
       <div className="relative mx-auto max-w-7xl">
         {/* Ambient glows */}
-        <div className="pointer-events-none absolute -inset-24 rounded-3xl bg-[radial-gradient(circle_at_18%_10%,rgba(196,166,101,0.12),transparent_44%)]" />
-        <div className="pointer-events-none absolute -inset-24 rounded-3xl bg-[radial-gradient(circle_at_85%_85%,rgba(46,110,83,0.15),transparent_50%)]" />
+        <div className="pointer-events-none absolute -inset-24 rounded-3xl bg-[radial-gradient(circle_at_18%_10%,rgba(196,166,101,0.10),transparent_44%)]" />
+        <div className="pointer-events-none absolute -inset-24 rounded-3xl bg-[radial-gradient(circle_at_85%_85%,rgba(46,110,83,0.12),transparent_50%)]" />
 
         <div className="relative z-10">
-          {/* Section header */}
+          {/* ── Section Header ──────────────────────────────────────── */}
           <div className="mb-12 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#dfc98f]">
-              Event Sponsors
-            </p>
+            {/* Eyebrow with decorative lines */}
+            <div className="flex items-center justify-center gap-3">
+              <div className="h-px w-12 bg-[linear-gradient(90deg,transparent,rgba(230,207,149,0.7))]" />
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#dfc98f]">
+                Event Sponsors
+              </p>
+              <div className="h-px w-12 bg-[linear-gradient(90deg,rgba(230,207,149,0.7),transparent)]" />
+            </div>
+
             <h2
               id="sponsors-heading"
-              className="font-display mt-3 text-3xl leading-tight text-[#f0ece5] sm:text-5xl"
+              className="font-display mt-4 text-3xl leading-tight text-[#f0ece5] sm:text-5xl"
             >
               Event Sponsors
             </h2>
@@ -257,20 +236,24 @@ export default function Partners() {
               Association Golf Tournament.
             </p>
 
-            {/* Gold accent divider */}
-            <div className="mx-auto mt-8 h-px max-w-xs bg-[linear-gradient(90deg,transparent,rgba(230,207,149,0.6),transparent)]" />
+            {/* Gold diamond divider */}
+            <div className="mx-auto mt-8 flex items-center justify-center gap-3">
+              <div className="h-px w-20 bg-[linear-gradient(90deg,transparent,rgba(230,207,149,0.55))]" />
+              <span className="text-[10px] text-[#c3a461]">◆</span>
+              <div className="h-px w-20 bg-[linear-gradient(90deg,rgba(230,207,149,0.55),transparent)]" />
+            </div>
           </div>
 
-          {/* Tiers — rendered in priority order */}
-          <div className="space-y-6 sm:space-y-8">
+          {/* ── Tier Blocks ─────────────────────────────────────────── */}
+          <div className="space-y-5 sm:space-y-6">
             {TIER_ORDER.map((tierKey) => (
               <TierSection key={tierKey} tierKey={tierKey} />
             ))}
           </div>
 
           {/* Footer note */}
-          <p className="mt-10 text-center text-xs text-[#8a8478]">
-            Final logo lockups will be updated as sponsor assets are received.
+          <p className="mt-8 text-center text-xs text-[#7a7670]">
+            ◆&nbsp; Final logo lockups will be updated as sponsor assets are received.
           </p>
         </div>
       </div>
