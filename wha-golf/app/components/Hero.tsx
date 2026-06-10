@@ -25,16 +25,24 @@ export default function Hero() {
 
       <div className="section-shell relative z-10 mx-auto grid min-h-screen w-full max-w-7xl grid-cols-1 items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-14">
         <div>
+          {/* ── Official WHA Logo ───────────────────────────────── */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55 }}
-            className="mb-4 inline-flex items-center gap-3 rounded-full border border-[#3b775d] bg-[#163326]/75 px-3 py-2"
+            transition={{ duration: 0.50 }}
+            className="mb-6"
           >
-            <span className="inline-flex shrink-0 items-center justify-center rounded-md border border-[#4f846b] bg-[#121614] px-2 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-[#b3e0c8] shadow-[0_0_0_1px_rgba(18,22,20,0.5)]">
-              WHA
-            </span>
-            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#b3e0c8]">Western Hardscape Association</span>
+            <div className="inline-block rounded-2xl bg-white/92 px-6 py-4 shadow-[0_4px_24px_rgba(0,0,0,0.35)]">
+              <Image
+                src="/wha-logo.png"
+                alt="Western Hardscape Association official logo"
+                width={220}
+                height={110}
+                className="h-24 w-auto object-contain"
+                priority
+                unoptimized
+              />
+            </div>
           </motion.div>
 
           <motion.p
