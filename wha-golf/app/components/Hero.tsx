@@ -23,7 +23,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_84%,rgba(195,164,97,0.2),transparent_45%)]" />
       </div>
 
-      <div className="section-shell relative z-10 mx-auto grid min-h-screen w-full max-w-7xl grid-cols-1 items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-14">
+      <div className="section-shell relative z-10 mx-auto grid min-h-[100svh] lg:min-h-[108vh] w-full max-w-7xl grid-cols-1 items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-14 xl:px-20">
         <div>
           {/* ── Official WHA Logo ───────────────────────────────── */}
           <motion.div
@@ -36,9 +36,9 @@ export default function Hero() {
               <Image
                 src="/wha-logo.png"
                 alt="Western Hardscape Association official logo"
-                width={260}
-                height={130}
-                className="h-32 w-auto object-contain"
+                width={280}
+                height={140}
+                className="h-36 w-auto object-contain"
                 priority
                 unoptimized
               />
@@ -58,7 +58,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.62, delay: 0.12 }}
-            className="font-display max-w-3xl text-4xl font-semibold leading-[1.02] text-[#f0ece4] sm:text-5xl lg:text-7xl"
+            className="font-display max-w-3xl text-4xl font-semibold leading-[1.02] text-[#f0ece4] sm:text-5xl lg:text-[5.5rem] xl:text-[6.5rem]"
           >
             The Hardscape Industry&apos;s
             <span className="text-gold-gradient"> Premier Golf Tournament</span>
@@ -104,7 +104,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.24 }}
-          className="glass-card mx-auto w-full max-w-sm p-5 sm:p-6"
+          className="glass-card mx-auto w-full max-w-md p-6 sm:p-7"
           aria-label="Quick registration panel"
         >
           <p className="text-[11px] uppercase tracking-[0.24em] text-[#d7be7d]">Scan and Register</p>

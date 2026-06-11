@@ -2,6 +2,7 @@ import Hero from "./components/Hero";
 import CredibilityStrip from "./components/CredibilityStrip";
 import WhyAttend from "./components/WhyAttend";
 import WhoYoullMeet from "./components/WhoYoullMeet";
+import TournamentGallery from "./components/TournamentGallery";
 import EventDetails from "./components/EventDetails";
 import Pricing from "./components/Pricing";
 import Sponsorship from "./components/Sponsorship";
@@ -17,6 +18,7 @@ export default function Home() {
       <CredibilityStrip />
       <WhyAttend />
       <WhoYoullMeet />
+      <TournamentGallery />
       <EventDetails />
       <Pricing />
       <Sponsorship />

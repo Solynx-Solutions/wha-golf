@@ -1,5 +1,20 @@
-// Reusable CTA URL — single source of truth
+// ─── Registration CTA ────────────────────────────────────────────────────────
+// Player registration form (Google Forms)
 export const CTA_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScqS_uWec5aesCli0slzTNHOKyvi7MtmXQjUIahbTSzTeXtHg/viewform";
+
+// ─── Square Sponsorship Checkout URLs ────────────────────────────────────────
+// TODO: Replace each constant below with the actual Square checkout link for
+//       that sponsorship tier. Until then they fall back to the registration form.
+export const SQUARE_PLATINUM =
+  "https://docs.google.com/forms/d/e/1FAIpQLScqS_uWec5aesCli0slzTNHOKyvi7MtmXQjUIahbTSzTeXtHg/viewform";
+export const SQUARE_GOLD =
+  "https://docs.google.com/forms/d/e/1FAIpQLScqS_uWec5aesCli0slzTNHOKyvi7MtmXQjUIahbTSzTeXtHg/viewform";
+export const SQUARE_SILVER =
+  "https://docs.google.com/forms/d/e/1FAIpQLScqS_uWec5aesCli0slzTNHOKyvi7MtmXQjUIahbTSzTeXtHg/viewform";
+export const SQUARE_HOLE =
+  "https://docs.google.com/forms/d/e/1FAIpQLScqS_uWec5aesCli0slzTNHOKyvi7MtmXQjUIahbTSzTeXtHg/viewform";
+export const SQUARE_RAFFLE =
   "https://docs.google.com/forms/d/e/1FAIpQLScqS_uWec5aesCli0slzTNHOKyvi7MtmXQjUIahbTSzTeXtHg/viewform";
 
 export const EVENT = {

@@ -1,6 +1,13 @@
 "use client";
 
-import { CTA_URL, EVENT } from "../lib/constants";
+import {
+  CTA_URL,
+  EVENT,
+  SQUARE_PLATINUM,
+  SQUARE_GOLD,
+  SQUARE_SILVER,
+  SQUARE_HOLE,
+} from "../lib/constants";
 
 const SPONSOR_EMAIL = "info@westhardscapeassoc.com";
 
@@ -12,6 +19,8 @@ const tiers = [
     badgeBg: "linear-gradient(110deg,#b6914d,#e4cc95,#b6914d)",
     badgeText: "#0f1110",
     highlight: "Premier logo placement + exclusive hole sponsor",
+    checkoutUrl: SQUARE_PLATINUM,
+    purchaseId: "sponsor-cta-purchase-platinum",
   },
   {
     name: "Gold",
@@ -20,6 +29,8 @@ const tiers = [
     badgeBg: "linear-gradient(110deg,#a07835,#d4aa5e,#a07835)",
     badgeText: "#0f1110",
     highlight: "Hole sponsor + banner signage + brand recognition",
+    checkoutUrl: SQUARE_GOLD,
+    purchaseId: "sponsor-cta-purchase-gold",
   },
   {
     name: "Silver",
@@ -28,6 +39,8 @@ const tiers = [
     badgeBg: "linear-gradient(110deg,#6e6a67,#b0aba6,#6e6a67)",
     badgeText: "#0f1110",
     highlight: "Logo on event materials + banner + communications",
+    checkoutUrl: SQUARE_SILVER,
+    purchaseId: "sponsor-cta-purchase-silver",
   },
   {
     name: "Hole",
@@ -36,6 +49,8 @@ const tiers = [
     badgeBg: "linear-gradient(110deg,#2d6a4f,#52b788,#2d6a4f)",
     badgeText: "#0f1110",
     highlight: "Branded hole signage + program recognition",
+    checkoutUrl: SQUARE_HOLE,
+    purchaseId: "sponsor-cta-purchase-hole",
   },
 ];
 
@@ -73,7 +88,7 @@ export default function SponsorCTA() {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className="flex flex-col items-center gap-2 rounded-xl border border-[#2a2f2d] bg-[linear-gradient(165deg,rgba(20,23,21,0.95),rgba(12,14,13,0.98))] px-4 py-5 text-center"
+              className="flex flex-col items-center gap-3 rounded-xl border border-[#2a2f2d] bg-[linear-gradient(165deg,rgba(20,23,21,0.95),rgba(12,14,13,0.98))] px-4 py-5 text-center"
             >
               <span
                 className="inline-flex items-center rounded-full px-3 py-0.5 text-[11px] font-bold uppercase tracking-[0.14em]"
@@ -90,6 +105,21 @@ export default function SponsorCTA() {
               <p className="text-[11px] leading-snug text-[#9a9490] sm:text-xs">
                 {tier.highlight}
               </p>
+              {/* Per-tier Square checkout link */}
+              <a
+                href={tier.checkoutUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                id={tier.purchaseId}
+                className="mt-auto w-full rounded-lg py-2 text-[11px] font-bold uppercase tracking-[0.1em] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                style={{
+                  color: tier.accentColor,
+                  border: `1px solid ${tier.accentColor}55`,
+                  background: `${tier.accentColor}0f`,
+                }}
+              >
+                Purchase
+              </a>
             </div>
           ))}
         </div>

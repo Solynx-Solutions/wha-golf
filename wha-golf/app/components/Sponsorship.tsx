@@ -1,6 +1,13 @@
 "use client";
 
-import { CTA_URL } from "../lib/constants";
+import {
+  SQUARE_PLATINUM,
+  SQUARE_GOLD,
+  SQUARE_SILVER,
+  SQUARE_HOLE,
+  SQUARE_RAFFLE,
+  CTA_URL,
+} from "../lib/constants";
 
 const sponsorTiers = [
   {
@@ -11,6 +18,7 @@ const sponsorTiers = [
     bgAccent: "rgba(201,168,76,0.06)",
     borderColor: "rgba(201,168,76,0.3)",
     featured: true,
+    checkoutUrl: SQUARE_PLATINUM,
     perks: [
       "Premier logo placement across all event materials",
       "Exclusive hole sponsor placement",
@@ -28,6 +36,7 @@ const sponsorTiers = [
     bgAccent: "rgba(201,168,76,0.04)",
     borderColor: "rgba(201,168,76,0.2)",
     featured: false,
+    checkoutUrl: SQUARE_GOLD,
     perks: [
       "Logo placement on event materials",
       "Hole sponsor placement",
@@ -44,6 +53,7 @@ const sponsorTiers = [
     bgAccent: "rgba(154,148,144,0.04)",
     borderColor: "rgba(154,148,144,0.2)",
     featured: false,
+    checkoutUrl: SQUARE_SILVER,
     perks: [
       "Logo placement on event materials",
       "Event banner recognition",
@@ -59,6 +69,7 @@ const sponsorTiers = [
     bgAccent: "rgba(45,106,79,0.05)",
     borderColor: "rgba(45,106,79,0.2)",
     featured: false,
+    checkoutUrl: SQUARE_HOLE,
     perks: [
       "Branded signage at your designated hole",
       "Logo recognition in event program",
@@ -73,6 +84,7 @@ const sponsorTiers = [
     bgAccent: "rgba(30,30,28,0.4)",
     borderColor: "rgba(42,42,42,0.6)",
     featured: false,
+    checkoutUrl: SQUARE_RAFFLE,
     perks: [
       "Brand recognition at raffle drawing",
       "Donate a product or gift card",
@@ -146,7 +158,7 @@ function SponsorCard({ tier, compact = false }: { tier: typeof sponsorTiers[0]; 
   return (
     <div
       id={`sponsor-${tier.id}`}
-      className={`relative overflow-hidden rounded-2xl border p-6 transition-transform duration-300 hover:-translate-y-1 ${
+      className={`relative overflow-hidden rounded-2xl border transition-transform duration-300 hover:-translate-y-1 ${
         tier.featured
           ? "border-[#c3a461] bg-gradient-to-b from-[#282318] to-[#161512]"
           : "border-[#313634] bg-gradient-to-b from-[#1c201f] to-[#111413]"
@@ -180,6 +192,34 @@ function SponsorCard({ tier, compact = false }: { tier: typeof sponsorTiers[0]; 
             </li>
           ))}
         </ul>
+
+        {/* Per-tier Square checkout CTA */}
+        <a
+          href={tier.checkoutUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          id={`sponsor-purchase-${tier.id}`}
+          className={`mt-5 flex w-full items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-bold uppercase tracking-[0.12em] transition-all duration-200 hover:-translate-y-0.5 ${
+            tier.featured
+              ? "btn-primary"
+              : "border hover:bg-opacity-10"
+          }`}
+          style={
+            !tier.featured
+              ? {
+                  color: tier.accentColor,
+                  borderColor: `${tier.accentColor}55`,
+                  background: `${tier.accentColor}08`,
+                }
+              : undefined
+          }
+        >
+          Purchase Package
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
       </div>
     </div>
   );
