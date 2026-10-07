@@ -20,24 +20,24 @@ export default function Footer() {
         </p>
 
         {/* SOLYNX attribution — standard footer credit */}
-        <div className="mt-5 border-t border-white/[0.08] pt-4 flex justify-center text-[0.78rem] leading-snug opacity-70 transition-opacity duration-[180ms] hover:opacity-100">
+        <div className="mt-5 border-t border-white/[0.08] pt-4 flex justify-center text-sm leading-snug">
           <Link
             href="https://solynx.solutions"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Website designed, built and managed by SOLYNX"
-            className="inline-flex items-center justify-center gap-[0.45rem] text-[#8a8480] no-underline hover:underline hover:underline-offset-[3px] focus-visible:underline focus-visible:underline-offset-[3px] flex-wrap"
+            className="inline-flex items-center justify-center gap-3 text-[#e7e5df] min-h-11 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d4c4a1] no-underline hover:underline hover:underline-offset-[3px] focus-visible:underline focus-visible:underline-offset-[3px] flex-wrap"
           >
             <Image
               src="/SLX-WRD.png"
               alt="SOLYNX logo"
-              width={80}
-              height={22}
-              className="h-[18px] w-auto"
+              width={184}
+              height={54}
+              className="h-auto w-[184px] box-content rounded-md bg-white px-2.5 py-1.5 object-contain"
               unoptimized
             />
             <span>
-              Website designed, built &amp; managed by <strong>SOLYNX</strong>
+              Powered by <strong>SOLYNX</strong>
             </span>
           </Link>
         </div>
